@@ -21,14 +21,21 @@ variables:
 steps:
 
 - task: DotNetCoreCLI@2
-  displayName: 'dotnet restore'
+  displayName: 'restore package'
   inputs:
     command: restore
     projects: '$(projectsToBuild)'
 
 - task: DotNetCoreCLI@2
+  displayName: 'build projects'
   inputs:
-    command: 'publish'
+    command: build
+    configuration: $(buildConfiguration)'
+    projects: projectsToBuild
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish zip packages'
     publishWebProjects: false
     modifyOutputPath: true
     zipAfterPublish: true
