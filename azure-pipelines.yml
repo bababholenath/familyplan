@@ -14,7 +14,7 @@ pool:
   - Agent.Name -equals DESKTOP-52JKOAC
 
 variables:
-  projectsToBuild: 'sixpack/**/*.csproj'
+  projectsToBuild: '**/*.csproj'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
