@@ -14,16 +14,17 @@ pool:
   - Agent.Name -equals DESKTOP-52JKOAC
 
 variables:
-  solution: '**/familyplan/sixpack.sln'
+  projectsToBuild: 'sixpack/**/*.csproj'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
 steps:
-- task: NuGetToolInstaller@1
 
-- task: NuGetCommand@2
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet restore'
   inputs:
-    restoreSolution: '$(solution)'
+    command: restore
+    projects: '$(projectsToBuild)'
 
 - task: DotNetCoreCLI@2
   inputs:
