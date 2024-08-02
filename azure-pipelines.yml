@@ -12,7 +12,7 @@ pool:
   - Agent.Name -equals DESKTOP-52JKOAC
 
 variables:
-  solution: '**/familyplan/familyplan.sln'
+  solution: '**/familyplan/sixpack.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
@@ -30,7 +30,7 @@ steps:
 
 - task: AzureWebApp@1
   inputs:
-    azureSubscription: 'familyplancientsec'
+    azureSubscription: 'service-conn-bholenath'
     appType: 'webAppLinux'
-    appName: 'familyplan'
+    appName: 'sixpack'
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
