@@ -34,9 +34,11 @@ steps:
     projects: $(projectsToBuild)
 
 - task: DotNetCoreCLI@2
+  displayName: 'publish zip packages'
   inputs:
-    command: 'publish zip packages'
+    command: 'publish'
     publishWebProjects: false
+    projects: $(projectsToBuild)
     modifyOutputPath: true
     zipAfterPublish: true
 
