@@ -31,7 +31,7 @@ steps:
   inputs:
     command: build
     configuration: $(buildConfiguration)'
-    projects: projectsToBuild
+    projects: $(projectsToBuild)
 
 - task: DotNetCoreCLI@2
   inputs:
