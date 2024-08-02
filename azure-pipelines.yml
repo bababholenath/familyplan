@@ -47,4 +47,4 @@ steps:
     azureSubscription: 'service-conn-bholenath'
     appType: 'webAppLinux'
     appName: 'sixpack'
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    package: '$(System.DefaultWorkingDirectory)/**/sixpack.web/*.zip'
